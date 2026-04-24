@@ -1,16 +1,22 @@
 function showSection(id) {
-
-    // get all sections on the page
+    //section handling
     var sections = document.getElementsByClassName("section");
-
-    // hide every section first
     for (var i = 0; i < sections.length; i++) {
         sections[i].style.display = "none";
     }
-
-    // show the selected section
     document.getElementById(id).style.display = "block";
+
+    //buttons
+    var buttons = document.querySelectorAll("nav button");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+
+    var activeButton = document.getElementById("btn-" + id);
+    if (activeButton) {
+        activeButton.classList.add("active");
+    }
 }
 
-// show the home section when the page loads
+// home on page load
 showSection("home");
