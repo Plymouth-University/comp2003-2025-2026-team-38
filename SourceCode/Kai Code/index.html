@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visit India</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <header>
@@ -19,43 +22,52 @@
         <button id="btn-destinations" onclick="showSection('destinations')">Destinations</button>
         <button id="btn-culture" onclick="showSection('culture')">Culture</button>
         <button id="btn-tips" onclick="showSection('tips')">Travel Tips</button>
+        <button id="btn-reviews" onclick="showSection('reviews')">Reviews</button>
     </nav>
 
     <main>
         <div id="home" class="section">
             <h2>Welcome</h2>
-            <p>
-                Visit India is an all-in-one travel guide for travellers and people searching for information about India. Explore the rich history, vibrant culture, and breathtaking landscapes.
-            </p>
+            <p>Visit India is an all-in-one travel guide for travellers and people searching for information about
+                India. Explore the rich history, vibrant culture, and breathtaking landscapes. India has 29 states, a
+                population of 1.4 billion people, and over 3000 years of history.</p>
+
+            <p>From the snowy peaks of the Himalayas to the tropical beaches of Goa, India offers something for every
+                type of traveller. Whether you are drawn by the ancient temples, the bustling cities, or the incredible
+                food, no two trips to India are ever the same.</p>
+
+            <p><em>Your journey begins here.</em></p>
+
         </div>
 
         <div id="destinations" class="section">
             <h2>Popular Destinations</h2>
             <p>India is well known for its beautiful scenery and rich culture.</p>
-            
+
             <ul class="destination-grid">
-                <li>
+                <li onclick="openCity('delhi')">
                     <img src="delhi.avif" alt="Street view of Delhi">
                     <div class="card-content">
                         <h3>Delhi</h3>
-                        <p>The capital city of India. It has a lot of history, busy streets, markets, and different types of food.</p>
+                        <p>The capital city of India. It has a lot of history, busy streets, markets, and different
+                            types of food.</p>
                     </div>
                 </li>
-                <li>
+                <li onclick="openCity('agra')">
                     <img src="agra.avif" alt="The Taj Mahal">
                     <div class="card-content">
                         <h3>Agra</h3>
                         <p>Famous for the Taj Mahal. Many tourists visit Agra as part of a short trip.</p>
                     </div>
                 </li>
-                <li>
+                <li onclick="openCity('jaipur')">
                     <img src="jaipur.avif" alt="Palace in Jaipur">
                     <div class="card-content">
                         <h3>Jaipur</h3>
                         <p>Known for its forts and palaces. It is sometimes called the Pink City.</p>
                     </div>
                 </li>
-                <li>
+                <li onclick="openCity('goa')">
                     <img src="goa.avif" alt="Beach in Goa">
                     <div class="card-content">
                         <h3>Goa</h3>
@@ -67,29 +79,105 @@
 
         <div id="culture" class="section">
             <h2>Culture & Etiquette</h2>
+            <p>India has a rich and varied culture. Customs can differ between regions, but these general tips will help
+                you show respect during your visit.</p>
+
+            <h3>Religion & Dress</h3>
             <ul class="info-list">
-                <li>People are expected to dress modestly in religious places.</li>
-                <li>Shoes are often removed before entering temples.</li>
-                <li>It is polite to ask before taking photos of people.</li>
-                <li>Customs can be different depending on the area.</li>
+                <li>Dress modestly when visiting temples, mosques, or other religious sites.</li>
+                <li>Remove your shoes before entering temples and many private homes.</li>
+                <li>Some sites require your head to be covered — carry a scarf just in case.</li>
+            </ul>
+
+            <h3>Social Customs</h3>
+            <ul class="info-list">
+                <li>Always ask before taking photos of people.</li>
+                <li>The head is considered sacred — avoid touching someone's head.</li>
+                <li>Use your right hand for eating, giving, and receiving items.</li>
+            </ul>
+
+            <h3>Food & Drink</h3>
+            <ul class="info-list">
+                <li>Many Indians are vegetarian — vegetarian options are widely available.</li>
+                <li>Avoid drinking tap water. Stick to bottled or filtered water.</li>
+                <li>Street food is popular but choose busy stalls with high turnover for safety.</li>
             </ul>
         </div>
 
         <div id="tips" class="section">
             <h2>Travel Tips</h2>
+            <p> India is a vast country, some general travel tipss .</p>
+
+            <h3>Before You Go</h3>
             <ul class="info-list">
-                <li>Ensure visa requirements are checked before travelling.</li>
-                <li>Train tickets should be booked in advance where possible.</li>
-                <li>It is useful to carry some cash as well as a card.</li>
-                <li>Important documents should be backed up.</li>
+                <li>Check visa requirements well in advance — most visitors need an e-Visa.</li>
+                <li>Speak to your doctor about recommended vaccinations before travelling.</li>
+                <li>Back up important documents like your passport and travel insurance.</li>
             </ul>
+
+            <h3>Getting Around</h3>
+            <ul class="info-list">
+                <li>Book train tickets early — routes between major cities fill up fast.</li>
+                <li>Use reputable apps like Ola or Uber in cities rather than unmarked taxis.</li>
+                <li>Domestic flights are affordable and save time on longer journeys.</li>
+            </ul>
+
+            <h3>Money & Staying Connected</h3>
+            <ul class="info-list">
+                <li>Carry some cash — many smaller shops and markets do not accept cards.</li>
+                <li>Pick up a local SIM card at the airport for cheap data and calls.</li>
+                <li>Bargaining is normal in markets but always stay polite and friendly.</li>
+            </ul>
+        </div>
+
+        <div id="reviews" class="section">
+            <h2>Reviews</h2>
+
+            <h2>Reviews</h2>
+            <p><em>Share your experience of India.</em></p>
+
+            <p>Name:</p>
+            <input id="review-name" type="text" placeholder="Your name">
+
+
+            <!-- form for city to review-->
+            <p>Destination:</p>
+            <select id="review-city">
+                <option value="delhi">Delhi</option>
+                <option value="agra">Agra</option>
+                <option value="jaipur">Jaipur</option>
+                <option value="goa">Goa</option>
+            </select>
+
+            <p>Rating:</p>
+            <div id="star-rating">
+                <span onclick="setRating(1)">★</span>
+                <span onclick="setRating(2)">★</span>
+                <span onclick="setRating(3)">★</span>
+                <span onclick="setRating(4)">★</span>
+                <span onclick="setRating(5)">★</span>
+            </div>
+
+            <p>Comment:</p>
+            <textarea id="review-comment" rows="3" placeholder="Write your review here..."></textarea>
+
+            <button onclick="submitReview()">Submit Review</button>
+
+            <!-- submitted reviews -->
+            <div id="reviews-list"></div>
         </div>
     </main>
 
-    <footer>
-        <p>2026 Visit India <p>
-    </footer>
+    <!-- call dark background on expanded city box  -->
+    <div id="city-overlay" onclick="closeCity()">
+        <div id="city-popup">
+            <button id="close-btn" onclick="closeCity()">✕</button>
+            <h2 id="popup-title"></h2>
+            <p id="popup-text"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
